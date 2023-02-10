@@ -10,8 +10,170 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Numéro 3"
+        android:layout_marginTop="32dp"
+        android:shadowColor="@color/pink_dark"
+        android:text="Contraventions"
+        android:textColor="@color/pink_dark"
         android:textSize="34sp"
-        tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="304dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:layout_editor_absoluteX="1dp">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="Type de route"
+            android:textColor="@color/purple_700"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/police_badge" />
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <RadioButton
+            android:id="@+id/numero3_rb_municipal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Municipal"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/numero3_rb_autoroute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Autoroute"
+            android:textSize="24sp" />
+    </RadioGroup>
+
+    <TableLayout
+        android:id="@+id/tableLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Limite de vitesse"
+                android:textColor="@color/purple_700"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Vitesse"
+                android:textColor="@color/purple_700"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Spinner
+                android:id="@+id/numero3_spinner_limite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/limites"
+                android:spinnerMode="dropdown" />
+
+            <EditText
+                android:id="@+id/numeroe3_txt_vitesse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number" />
+        </TableRow>
+
+    </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout2"
+        tools:layout_editor_absoluteX="2dp">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="Montant de l'amende"
+            android:textColor="@color/purple_700"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/script" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/numero3_lbl_amende"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="XXX $"
+        android:textColor="@color/pink_dark"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:onClick="clickCalculer"
+        android:text="Calculer"
+        app:layout_constraintEnd_toEndOf="@+id/numero3_lbl_amende"
+        app:layout_constraintStart_toStartOf="@+id/numero3_lbl_amende"
+        app:layout_constraintTop_toBottomOf="@+id/numero3_lbl_amende" />
 </androidx.constraintlayout.widget.ConstraintLayout>
